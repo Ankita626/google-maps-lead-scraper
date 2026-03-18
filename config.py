@@ -30,7 +30,7 @@ TIMEOUT = 30000
 LOCALE = "en-US"
 
 # Output filenames
-OUTPUT_FILE = "bd_tourism_data.csv"
+OUTPUT_FILE = "data_output.csv"
 LOG_FILE = "scraper.log"
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
