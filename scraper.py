@@ -51,49 +51,6 @@ class GoogleMapsScraper:
                     break
         except Exception as e:
             logger.warning(f"Scrolling issue: {e}")
-
-    # def extract_data(self):
-    #     """Parses visible cards and extracts details."""
-    #     results = []
-    #     cards = self.page.locator(MapsLocators.RESULT_CARD).all()
-    #     logger.info(f"Found {len(cards)} cards. Extracting details...")
-
-    #     for card in cards[:MAX_RESULTS]:
-    #         data = {
-    #             "Name": "N/A",
-    #             "Rating": "N/A",
-    #             "Address": "N/A", # Needs clicking into card for full details, keeping simple for listing
-    #             "Link": "N/A"
-    #         }
-            
-    #         try:
-    #             # Extract accessible name (often easiest way)
-    #             if card.get_by_attribute("aria-label", "").count() > 0: 
-    #                  # This is a fallback if direct text fails
-    #                  pass
-
-    #             # Text Extraction
-    #             text_content = card.inner_text().split('\n')
-    #             if len(text_content) > 0:
-    #                 data["Name"] = text_content[0]
-                
-    #             # Link Extraction
-    #             link_locator = card.locator("a").first
-    #             if link_locator.count() > 0:
-    #                 data["Link"] = link_locator.get_attribute("href")
-
-    #             # Rating Extraction (if visible in card)
-    #             rating_loc = card.locator(MapsLocators.RATING)
-    #             if rating_loc.count() > 0:
-    #                 data["Rating"] = rating_loc.get_attribute("aria-label")
-
-    #             results.append(data)
-                
-    #         except Exception as e:
-    #             logger.error(f"Error parsing card: {e}")
-    #             continue
-        
-    #     return results
     
     def extract_data(self):
         """Parses visible cards and extracts details."""
